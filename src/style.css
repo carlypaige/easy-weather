@@ -5,13 +5,13 @@ body {
   border: 1px solid;
   border-color: #5a6275;
   border-radius: 8px;
-  margin: 0 auto;
-  padding: 12px;
+  margin: 30px auto;
+  padding: 20px;
   max-width: 600px;
   max-height: 500px;
 }
 .city {
-  font-size: 40px;
+  font-size: 48px;
   font-weight: 400;
   color: #5a6275;
 }
@@ -31,7 +31,7 @@ body {
 }
 .current-temp {
   position: relative;
-  bottom: 44px;
+  bottom: 70px;
   font-size: 36px;
   color: #f92c3a;
 }
