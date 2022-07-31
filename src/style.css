@@ -82,3 +82,6 @@ ul {
   bottom: 520px;
   padding: 0;
 }
+#footer-link {
+  text-decoration: none;
+}
