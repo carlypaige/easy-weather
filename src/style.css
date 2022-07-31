@@ -29,7 +29,7 @@ body {
   bottom: 57px;
   left: 285px;
 }
-.current-temp {
+.temp-time {
   position: relative;
   bottom: 70px;
   font-size: 36px;
@@ -38,6 +38,15 @@ body {
 .current-time {
   font-size: 24px;
   color: #838998;
+}
+#units {
+  font-size: 20px;
+  position: relative;
+  bottom: 14px;
+}
+#celsius-link,
+#fahrenheit-link {
+  text-decoration: none;
 }
 .current-whp {
   color: #5a6275;

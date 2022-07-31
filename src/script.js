@@ -20,7 +20,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#current-temp").innerHTML = `${Math.round(
     response.data.main.temp
-  )}°c`;
+  )}°`;
   document.querySelector(
     "#wind-speed"
   ).innerHTML = `${response.data.wind.speed} m/s`;
@@ -30,6 +30,7 @@ function displayWeatherCondition(response) {
   document.querySelector(
     "#pressure"
   ).innerHTML = `${response.data.main.pressure}`;
+  celsiusTemperature = response.data.main.temp;
 }
 function searchCity(city) {
   let apiKey = "d597852c40c3d897fb6c9155c9e167e0";
@@ -53,5 +54,26 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}°`;
+}
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°`;
+}
+
+let celsiusTemperature = null;
+
 let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
+searchCity("Seattle");
