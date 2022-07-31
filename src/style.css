@@ -8,6 +8,7 @@ body {
   margin: 0 auto;
   padding: 12px;
   max-width: 600px;
+  max-height: 500px;
 }
 .city {
   font-size: 40px;
@@ -62,11 +63,13 @@ ul {
   font-size: 24px;
   color: #f92c3a;
   position: relative;
-  top: -70px;
+  bottom: 230px;
+  left: 288px;
 }
 .five-day {
   position: relative;
-  top: -80px;
+  bottom: 250px;
+  left: 280px;
   color: #838998;
   font-size: 20px;
   font-weight: 300;
