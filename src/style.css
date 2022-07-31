@@ -33,8 +33,8 @@ body {
   font-size: 36px;
   color: #f92c3a;
 }
-.current-time {
-  font-size: 24px;
+#date-time-statement {
+  font-size: 18px;
   color: #838998;
 }
 #units {

@@ -1,19 +1,18 @@
-let now = new Date();
-let currentTime = document.querySelector("#current-time");
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[date.getDay()];
 
-let hour = now.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
+  return `${day} ${hours}:${minutes}`;
 }
-let minute = now.getMinutes();
-if (minute < 10) {
-  minute = `0${minute}`;
-}
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = days[now.getDay()];
-
-currentTime.innerHTML = `${day} ${hour}:${minute} `;
-
 function displayWeatherCondition(response) {
   console.log(response);
 
@@ -33,6 +32,9 @@ function displayWeatherCondition(response) {
     "#pressure"
   ).innerHTML = `${response.data.main.pressure}`;
   celsiusTemperature = response.data.main.temp;
+  document.querySelector("#date-time").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
 }
 function searchCity(city) {
   let apiKey = "d597852c40c3d897fb6c9155c9e167e0";
