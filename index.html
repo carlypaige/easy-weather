@@ -32,15 +32,21 @@
         <div class="row">
           <h1 class="col-4 city" id="city">Seattle</h1>
 
-          <form class="col-4 search-city" id="search-city-form">
+          <form class="col-7 search-city" id="search-city-form">
             <input
               type="text"
               placeholder="Enter new city"
+              class="search-city-input form-control"
               id="search-city-input"
             />
-            <input type="submit" value="Go" class="go-button" id="go-button" />
+            <input
+              type="submit"
+              value="Go"
+              class="go-button btn btn-secondary"
+              id="go-button"
+            />
           </form>
-          <button id="current-button">Current</button>
+          <button class="btn btn-danger" id="current-button">Current</button>
         </div>
         <div class="row">
           <h2 class="col-4 current-temp" id="current-temp">71°f</h2>
