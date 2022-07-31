@@ -38,9 +38,6 @@ body {
 .current-time {
   font-size: 24px;
   color: #838998;
-  position: relative;
-  right: 176px;
-  top: 8px;
 }
 .current-whp {
   color: #5a6275;
@@ -58,16 +55,9 @@ ul {
   bottom: 94px;
   color: #ffa726;
 }
-.title-five-day {
-  font-size: 24px;
-  color: #f92c3a;
-  position: relative;
-  bottom: 230px;
-  left: 288px;
-}
 .five-day {
   position: relative;
-  bottom: 250px;
+  bottom: 270px;
   left: 280px;
   color: #838998;
   font-size: 20px;
