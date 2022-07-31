@@ -26,12 +26,10 @@ body {
   height: 38px;
   padding: 0%;
   position: relative;
-  bottom: 57px;
+  bottom: 67px;
   left: 285px;
 }
-.temp-time {
-  position: relative;
-  bottom: 70px;
+.temperature {
   font-size: 36px;
   color: #f92c3a;
 }
@@ -47,6 +45,10 @@ body {
 #celsius-link,
 #fahrenheit-link {
   text-decoration: none;
+}
+.description {
+  font-size: 18px;
+  text-transform: capitalize;
 }
 .current-whp {
   color: #5a6275;

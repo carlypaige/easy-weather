@@ -30,7 +30,11 @@
     <div class="weather-plus-app">
       <div class="container">
         <div class="row">
-          <h1 class="col-4 city" id="city">Seattle</h1>
+          <div class="col-4 city" id="city-time">
+            <span id="city">Seattle</span>
+            <div class="current-time" id="current-time">3:46 pm</div>
+            <div class="description" id="description">Clear sky</div>
+          </div>
 
           <form class="col-7 search-city" id="search-city-form">
             <input
@@ -48,11 +52,16 @@
           </form>
           <button class="btn btn-danger" id="current-button">Current</button>
         </div>
+
         <div class="row">
-          <h2 class="col-4 temp-time" id="temp-time"><span id="current-temp">71° </span>
-            <span id="units"><a href="#" id="celsius-link">C</a> | <a href="#" id="fahrenheit-link">F</a></span>
-          <div class="current-time" id="current-time">3:46 pm</div>
-        </div></h2>
+          <h2 class="col-4 temperature" id="temperature">
+            <span id="current-temp">71° </span>
+            <span id="units"
+              ><a href="#" id="celsius-link">C</a> |
+              <a href="#" id="fahrenheit-link">F</a></span
+            >
+          </h2>
+        </div>
         <div class="row">
           <div class="col-4">
             <ul class="current-whp">

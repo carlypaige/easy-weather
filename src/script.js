@@ -21,6 +21,8 @@ function displayWeatherCondition(response) {
   document.querySelector("#current-temp").innerHTML = `${Math.round(
     response.data.main.temp
   )}°`;
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
   document.querySelector(
     "#wind-speed"
   ).innerHTML = `${response.data.wind.speed} m/s`;
@@ -76,4 +78,5 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
+
 searchCity("Seattle");
