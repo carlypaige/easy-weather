@@ -26,12 +26,15 @@ body {
   height: 38px;
   padding: 0%;
   position: relative;
-  bottom: 67px;
+  bottom: 84px;
   left: 285px;
 }
 .temperature {
   font-size: 36px;
   color: #f92c3a;
+  padding: 0%;
+  position: relative;
+  left: -16px;
 }
 #date-time-statement {
   font-size: 18px;

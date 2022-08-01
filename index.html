@@ -57,13 +57,18 @@
         </div>
 
         <div class="row">
-          <h2 class="col-4 temperature" id="temperature">
-            <span id="current-temp">71° </span>
-            <span id="units"
+          <div class="col-6 temperature clearfix" id="temperature">
+            <img
+              src=" http://openweathermap.org/img/wn/10d@2x.png"
+              id="icon"
+              class="float-left"
+            />
+            <span id="current-temp" class="float-left">71° </span>
+            <span id="units" class="float-left"
               ><a href="#" id="celsius-link">C</a> |
               <a href="#" id="fahrenheit-link">F</a></span
             >
-          </h2>
+          </div>
         </div>
         <div class="row">
           <div class="col-4">
