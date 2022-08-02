@@ -13,9 +13,12 @@ function formatDate(timestamp) {
 
   return `${day} ${hours}:${minutes}`;
 }
+function getForecast(coordinates) {
+  let apiKey = "d597852c40c3d897fb6c9155c9e167e0";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function displayWeatherCondition(response) {
-  console.log(response);
-
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#current-temp").innerHTML = `${Math.round(
     response.data.main.temp
@@ -41,6 +44,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#date-time").innerHTML = formatDate(
     response.data.dt * 1000
   );
+  getForecast(response.data.coord);
 }
 function searchCity(city) {
   let apiKey = "d597852c40c3d897fb6c9155c9e167e0";
@@ -75,27 +79,35 @@ function showCelsiusTemp(event) {
   let temperatureElement = document.querySelector("#current-temp");
   temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°`;
 }
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = `<div class="row">
-          <ul class="list-group list-group-flush forecast" id="forecast">
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row">`;
+
+  forecast.forEach(function (forecastDay) {
+    forecastHTML =
+      forecastHTML +
+      `
             <li class="list-group-item">
-              T<span class="low-high"> 57/76 </span>⛅
+              ${formatDay(forecastDay.dt)}  <span class="high-low">${Math.round(
+        forecastDay.temp.max
+      )} / ${Math.round(
+        forecastDay.temp.min
+      )}</span><img src=http://openweathermap.org/img/wn/${
+        forecastDay.weather[0].icon
+      }@2x.png id="forecast-icon"/>
             </li>
-            <li class="list-group-item">
-              W<span class="low-high"> 58/71 </span>⛅
-            </li>
-            <li class="list-group-item">
-              R<span class="low-high"> 58/74 </span>🌧️
-            </li>
-            <li class="list-group-item">
-              F<span class="low-high"> 54/75 </span>☀️
-            </li>
-            <li class="list-group-item">
-              S<span class="low-high"> 57/78 </span>☀️
-            </li>
-          </ul>
-        </div>`;
+          `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 let celsiusTemperature = null;
@@ -110,4 +122,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
 searchCity("Seattle");
-displayForecast();
