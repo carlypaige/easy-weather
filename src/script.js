@@ -75,6 +75,28 @@ function showCelsiusTemp(event) {
   let temperatureElement = document.querySelector("#current-temp");
   temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°`;
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = `<div class="row">
+          <ul class="list-group list-group-flush forecast" id="forecast">
+            <li class="list-group-item">
+              T<span class="low-high"> 57/76 </span>⛅
+            </li>
+            <li class="list-group-item">
+              W<span class="low-high"> 58/71 </span>⛅
+            </li>
+            <li class="list-group-item">
+              R<span class="low-high"> 58/74 </span>🌧️
+            </li>
+            <li class="list-group-item">
+              F<span class="low-high"> 54/75 </span>☀️
+            </li>
+            <li class="list-group-item">
+              S<span class="low-high"> 57/78 </span>☀️
+            </li>
+          </ul>
+        </div>`;
+}
 
 let celsiusTemperature = null;
 
@@ -88,3 +110,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
 searchCity("Seattle");
+displayForecast();

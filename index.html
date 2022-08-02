@@ -52,11 +52,9 @@
               class="go-button btn btn-secondary"
               id="go-button"
             />
+            <button class="btn btn-danger" id="current-button">Current</button>
           </form>
-          <button class="btn btn-danger" id="current-button">Current</button>
-        </div>
 
-        <div class="row">
           <div class="col-6 temperature clearfix" id="temperature">
             <img
               src=" http://openweathermap.org/img/wn/10d@2x.png"
@@ -68,27 +66,24 @@
               ><a href="#" id="celsius-link">C</a> |
               <a href="#" id="fahrenheit-link">F</a></span
             >
+            <div class="row">
+              <div class="col-4">
+                <ul class="current-whp">
+                  <li>wind</li>
+                  <li>humidity</li>
+                  <li>pressure</li>
+                </ul>
+              </div>
+              <div class="col-5">
+                <ul class="whp-metrics">
+                  <li id="wind-speed">5 m/s</li>
+                  <li id="humidity">40%</li>
+                  <li id="pressure">989</li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-4">
-            <ul class="current-whp">
-              <li>wind</li>
-              <li>humidity</li>
-              <li>pressure</li>
-            </ul>
-          </div>
-        </div>
-        <div class="row"></div>
-        <div class="col-4">
-          <ul class="whp-metrics">
-            <li id="wind-speed">5 m/s</li>
-            <li id="humidity">40%</li>
-            <li id="pressure">989</li>
-          </ul>
-        </div>
-        <div class="row">
-          <ul class="list-group list-group-flush col-4 five-day">
+          <ul class="list-group list-group-flush col-4 forecast" id="forecast">
             <li class="list-group-item">
               T<span class="low-high"> 57/76 </span>⛅
             </li>
@@ -106,17 +101,17 @@
             </li>
           </ul>
         </div>
-        <footer>
-          <a
-            href="https://github.com/carlypaige/SheCodes-git-carly"
-            target="_blank"
-            id="footer-link"
-            >Open-source code</a
-          >
-          by Carly Paige
-        </footer>
       </div>
     </div>
+    <footer>
+      <a
+        href="https://github.com/carlypaige/SheCodes-git-carly"
+        target="_blank"
+        id="footer-link"
+        >Open-source code</a
+      >
+      by Carly Paige
+    </footer>
     <script src="src/script.js"></script>
   </body>
 </html>

@@ -6,6 +6,7 @@ body {
   border-color: #5a6275;
   border-radius: 8px;
   margin: 30px auto;
+  margin-bottom: 0%;
   padding: 20px;
   max-width: 600px;
   max-height: 500px;
@@ -25,9 +26,6 @@ body {
   width: 78px;
   height: 38px;
   padding: 0%;
-  position: relative;
-  bottom: 84px;
-  left: 285px;
 }
 .temperature {
   font-size: 36px;
@@ -59,34 +57,27 @@ body {
 }
 ul {
   list-style: none;
-  padding: 0;
 }
 .whp-metrics {
   text-align: right;
   font-size: 17px;
-  position: relative;
-  right: 10px;
-  bottom: 94px;
   color: #ffa726;
 }
-.five-day {
-  position: relative;
-  bottom: 270px;
-  left: 280px;
+.forecast {
   color: #838998;
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 300;
+  position: relative;
+  bottom: 12px;
 }
 .low-high {
   color: #f92c3a;
   word-spacing: 12px;
   font-weight: 400;
 }
-.hourly {
+footer {
   position: relative;
-  left: 200px;
-  bottom: 520px;
-  padding: 0;
+  left: 144px;
 }
 #footer-link {
   text-decoration: none;
