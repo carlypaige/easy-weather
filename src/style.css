@@ -1,9 +1,6 @@
 body {
   font-family: "Poppins", sans-serif;
 }
-footer {
-  margin-left: 200px;
-}
 ul {
   list-style: none;
   padding: 0%;
@@ -83,7 +80,7 @@ ul {
   color: #838998;
 }
 #units {
-  font-size: 20px;
+  font-size: 18px;
   position: relative;
   bottom: 14px;
 }
