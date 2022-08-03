@@ -2,11 +2,16 @@ body {
   font-family: "Poppins", sans-serif;
 }
 footer {
-  position: relative;
-  left: 144px;
+  margin-left: 200px;
 }
 ul {
   list-style: none;
+  padding: 0%;
+  margin: 0%;
+}
+.container {
+  max-width: 600px;
+  max-height: 700px;
 }
 .weather-plus-app {
   border: 1px solid;
@@ -24,7 +29,7 @@ ul {
   color: #5a6275;
 }
 .search-city {
-  margin: 20px auto;
+  margin: 20px 0;
 }
 .search-city-input {
   margin-bottom: 10px;
@@ -43,16 +48,21 @@ ul {
 .current-whp {
   color: #5a6275;
   font-size: 17px;
+  position: relative;
+  bottom: 100px;
 }
 .whp-metrics {
   text-align: right;
   font-size: 17px;
   color: #ffa726;
+  position: relative;
+  bottom: 100px;
 }
 .forecast {
   color: #838998;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
+  margin: 0;
 }
 .high-low {
   color: #f92c3a;
@@ -61,7 +71,7 @@ ul {
 }
 .list-group-item {
   padding: 0 0 0 12px;
-  max-height: 60px;
+  max-height: 45px;
 }
 #current-button {
   width: 78px;

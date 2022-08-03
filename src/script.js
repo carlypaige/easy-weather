@@ -89,24 +89,24 @@ function displayForecast(response) {
   console.log(response.data.daily);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<ul>`;
 
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `
-            <li class="list-group-item">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<li class="list-group-item">
               ${formatDay(forecastDay.dt)}  <span class="high-low">${Math.round(
-        forecastDay.temp.max
-      )} / ${Math.round(
-        forecastDay.temp.min
-      )}</span><img src=http://openweathermap.org/img/wn/${
+          forecastDay.temp.max
+        )} / ${Math.round(forecastDay.temp.min)}</span>
+      <img src=http://openweathermap.org/img/wn/${
         forecastDay.weather[0].icon
       }@2x.png id="forecast-icon"/>
             </li>
           `;
+    }
   });
-  forecastHTML = forecastHTML + `</div>`;
+  forecastHTML = forecastHTML + `</ul>`;
   forecastElement.innerHTML = forecastHTML;
 }
 

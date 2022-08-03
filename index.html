@@ -30,31 +30,35 @@
     <div class="weather-plus-app">
       <div class="container">
         <div class="row">
-          <div class="col-4 city" id="city-time">
+          <div class="col-6 city" id="city-time">
             <span id="city">Seattle</span>
             <div id="date-time-statement">
               Updated:
-              <div id="date-time">3:46</div>
+              <span id="date-time">3:46</span>
             </div>
             <div class="description" id="description">Clear sky</div>
           </div>
-
-          <form class="col-7 search-city" id="search-city-form">
-            <input
-              type="text"
-              placeholder="Enter new city"
-              class="search-city-input form-control"
-              id="search-city-input"
-            />
-            <input
-              type="submit"
-              value="Go"
-              class="go-button btn btn-secondary"
-              id="go-button"
-            />
-            <button class="btn btn-danger" id="current-button">Current</button>
-          </form>
-
+          <div class="col-6">
+            <form class="search-city" id="search-city-form">
+              <input
+                type="text"
+                placeholder="Enter new city"
+                class="search-city-input form-control"
+                id="search-city-input"
+              />
+              <input
+                type="submit"
+                value="Go"
+                class="go-button btn btn-secondary"
+                id="go-button"
+              />
+              <button class="btn btn-danger" id="current-button">
+                Current
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-6 temperature clearfix" id="temperature">
             <img
               src=" http://openweathermap.org/img/wn/10d@2x.png"
@@ -66,24 +70,22 @@
               ><a href="#" id="celsius-link">C</a> |
               <a href="#" id="fahrenheit-link">F</a></span
             >
-            <div class="row">
-              <div class="col-3">
-                <ul class="current-whp">
-                  <li>wind</li>
-                  <li>humidity</li>
-                  <li>pressure</li>
-                </ul>
-              </div>
-              <div class="col-6">
-                <ul class="whp-metrics">
-                  <li id="wind-speed">5 m/s</li>
-                  <li id="humidity">40%</li>
-                  <li id="pressure">989</li>
-                </ul>
-              </div>
-            </div>
           </div>
-          <ul class="col-6 list-group forecast" id="weather-forecast"></ul>
+          <div class="col-6 forecast" id="weather-forecast"></div>
+          <div class="col-1">
+            <ul class="current-whp">
+              <li>wind</li>
+              <li>humidity</li>
+              <li>pressure</li>
+            </ul>
+          </div>
+          <div class="col-3">
+            <ul class="whp-metrics">
+              <li id="wind-speed">5 m/s</li>
+              <li id="humidity">40%</li>
+              <li id="pressure">989</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
